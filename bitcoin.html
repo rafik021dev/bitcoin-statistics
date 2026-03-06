@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Transações Bitcoin</title>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .box {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .tabela {
+            width: 35%;
+        }
+
+        .grafico {
+            width: 65%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ffa200;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ffa200;
+            color: #000;
+        }
+    </style>
+
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Data', 'Transações'],
+['22/02/2026', 453671],
+['23/02/2026', 566873],
+['24/02/2026', 485381],
+['25/02/2026', 425509],
+['26/02/2026', 415510],
+['27/02/2026', 424909],
+['28/02/2026', 462687],
+['01/03/2026', 422366],
+['02/03/2026', 381186],
+['03/03/2026', 377812],
+            ]);
+
+            var options = {
+                title: 'Transações de Bitcoin',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                colors: ['#ffa200']
+            };
+
+            var chart = new google.visualization.LineChart(
+                document.getElementById('chart')
+            );
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Estatísticas de Transações Bitcoin</h1>
+
+    <div class="container">
+
+        <div class="box tabela">
+            <h2>Resumo Estatístico</h2>
+            <table>
+                <tr><th>Métrica</th><th>Valor</th></tr>
+<tr><td>Média</td><td>441.590,40</td></tr><tr><td>Mediana</td><td>425.209,00</td></tr><tr><td>Moda</td><td>415.510</td></tr><tr><td>Máximo</td><td>566.873</td></tr><tr><td>Mínimo</td><td>377.812</td></tr><tr><td>Variância</td><td>2.750.737.513,64</td></tr><tr><td>Desvio Padrão</td><td>52.447,47</td></tr>            </table>
+        </div>
+
+        <div class="box grafico">
+            <div id="chart" style="width: 100%; height: 500px;"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
