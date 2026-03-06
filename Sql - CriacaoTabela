@@ -1,0 +1,12 @@
+@PostgreSQL 18
+
+Database: 'bitcoin'
+Senha utilizada no projeto: 123456
+
+CREATE TABLE estatisticas (
+    id SERIAL PRIMARY KEY,
+    data_execucao TIMESTAMP DEFAULT NOW(),
+    periodo_dias INTEGER,
+    dados_json JSONB,
+    dados_xml XML
+);
